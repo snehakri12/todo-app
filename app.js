@@ -197,7 +197,7 @@ app.post(
             });
 
             if (req.file) {
-                user.profilepic = req.file.filename;
+                user.profilepic = req.file.path;
                 await user.save();
             }
 

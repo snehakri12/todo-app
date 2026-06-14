@@ -17,7 +17,9 @@
         <div class="flex items-center gap-5">
 
             <img
-                src="/images/uploads/<%= user.profilepic || 'default.jpg' %>"
+                src="<%= user.profilepic && user.profilepic !== 'default.png'
+                   ? '/images/uploads/' + user.profilepic
+        : '/images/default.png' %>"
                 class="w-24 h-24 rounded-full object-cover border-4 border-blue-500"
                 alt="Profile">
 

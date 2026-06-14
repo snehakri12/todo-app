@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,51 +7,54 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 
-<body class="bg-zinc-950 text-white overflow-hidden">
+<body class="bg-zinc-950 text-white">
 
-    <div class="w-full min-h-screen flex">
-        <div class="w-1/2 flex flex-col justify-center px-20">
+    <div class="w-full min-h-screen flex flex-col lg:flex-row">
 
-            <p class="text-blue-400 text-sm tracking-[0.3em] uppercase mb-4">
+        <div class="w-full lg:w-1/2 flex flex-col justify-center px-6 sm:px-10 md:px-16 lg:px-20 py-12 text-center lg:text-left">
+
+            <p class="text-blue-400 text-xs sm:text-sm tracking-[0.25em] uppercase mb-4">
                 Productivity Tracker
             </p>
 
-            <h1 class="text-7xl font-black leading-none">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-tight">
                 Build Better
                 <br>
                 Days.
             </h1>
 
-            <p class="text-zinc-400 mt-8 text-lg max-w-lg">
-                Every Productive Day
-Starts With A Plan.
+            <p class="text-zinc-400 mt-6 text-base sm:text-lg max-w-lg mx-auto lg:mx-0">
+                Every productive day starts with a plan.
             </p>
 
-            <div class="flex gap-4 mt-10">
+            <div class="flex flex-col sm:flex-row gap-4 mt-8 w-full sm:w-auto">
 
                 <a href="/login"
-                    class="bg-blue-500 px-8 py-4 rounded-xl font-semibold hover:scale-105 duration-200">
+                    class="bg-blue-500 px-8 py-4 rounded-xl font-semibold hover:scale-105 duration-200 text-center w-full sm:w-auto">
                     Login
                 </a>
 
                 <a href="/signup"
-                    class="border border-zinc-700 px-8 py-4 rounded-xl hover:bg-zinc-900 duration-200">
+                    class="border border-zinc-700 px-8 py-4 rounded-xl hover:bg-zinc-900 duration-200 text-center w-full sm:w-auto">
                     Create Account
                 </a>
 
             </div>
 
         </div>
-        <div class="w-1/2 flex items-center justify-center relative">
+        <div class="w-full lg:w-1/2 flex items-center justify-center relative px-4 py-10">
 
-            <div class="absolute w-96 h-96 bg-blue-500 rounded-full blur-[150px] opacity-30"></div>
+            <div class="absolute w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-blue-500 rounded-full blur-[120px] opacity-20"></div>
 
-            <div class="relative bg-zinc-900 border border-zinc-800 p-8 rounded-3xl w-[450px]">
+            <div class="relative bg-zinc-900 border border-zinc-800 p-6 sm:p-8 rounded-3xl w-full max-w-sm sm:max-w-md md:max-w-lg">
 
-                <h3 class="text-xl mb-6">Today's Progress</h3>
+                <h3 class="text-lg sm:text-xl mb-6 font-semibold">
+                    Today's Progress
+                </h3>
 
                 <div class="mb-6">
-                    <div class="flex justify-between mb-2">
+
+                    <div class="flex justify-between mb-2 text-sm sm:text-base">
                         <span>Efficiency</span>
                         <span>80%</span>
                     </div>
@@ -60,9 +62,10 @@ Starts With A Plan.
                     <div class="h-3 bg-zinc-800 rounded-full overflow-hidden">
                         <div class="h-full w-[80%] bg-green-500"></div>
                     </div>
+
                 </div>
 
-                <div class="space-y-4">
+                <div class="space-y-4 text-sm sm:text-base">
 
                     <div class="flex items-center gap-3">
                         <input type="checkbox" checked>
@@ -86,7 +89,7 @@ Starts With A Plan.
 
                 </div>
 
-                <div class="mt-8 text-green-400">
+                <div class="mt-8 text-green-400 text-sm sm:text-base font-medium">
                     🔥 12 Day Streak
                 </div>
 
@@ -98,4 +101,3 @@ Starts With A Plan.
 
 </body>
 </html>
-

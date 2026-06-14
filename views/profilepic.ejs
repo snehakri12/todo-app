@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,52 +9,47 @@
 
 <body class="bg-zinc-950 text-white">
 
-<div class="w-full min-h-screen flex items-center justify-center px-5">
+<div class="w-full min-h-screen flex items-center justify-center px-4 sm:px-6">
 
-    <div class="w-full max-w-xl bg-zinc-900 border border-zinc-800 rounded-3xl p-10 shadow-2xl">
+    <div class="w-full max-w-xl bg-zinc-900 border border-zinc-800 rounded-3xl p-6 sm:p-10 shadow-2xl">
 
-    
         <div class="text-center mb-8">
 
-            <h2 class="text-4xl font-black mb-3">
+            <h2 class="text-2xl sm:text-4xl font-black mb-3">
                 Update Your Profile
             </h2>
 
-            <p class="text-zinc-400 text-lg">
+            <p class="text-zinc-400 text-sm sm:text-lg">
                 Choose a new photo to personalize your workspace ✨
             </p>
 
         </div>
 
-    
         <form
             action="/upload"
             method="post"
             enctype="multipart/form-data"
             class="space-y-6">
 
-            
-            <div class="bg-zinc-800 rounded-2xl p-5 border border-zinc-700">
+            <div class="bg-zinc-800 rounded-2xl p-4 sm:p-5 border border-zinc-700">
 
-                <label class="block mb-3 text-zinc-300 font-semibold">
+                <label class="block mb-4 text-zinc-300 font-semibold text-sm sm:text-base">
                     Select Image
                 </label>
 
-                <div class="flex items-center gap-4">
+                <div class="flex flex-col sm:flex-row gap-4 items-stretch sm:items-center">
 
-        
                     <label
                         for="image"
-                        class="bg-blue-500 px-5 py-3 rounded-xl cursor-pointer hover:bg-blue-600 transition font-semibold">
+                        class="bg-blue-500 px-5 py-3 rounded-xl cursor-pointer hover:bg-blue-600 transition font-semibold text-center whitespace-nowrap">
                         Choose File
                     </label>
 
-    
-                    <span
+                    <div
                         id="file-name"
-                        class="bg-zinc-700 text-zinc-300 px-4 py-3 rounded-xl flex-1">
+                        class="bg-zinc-700 text-zinc-300 px-4 py-3 rounded-xl flex-1 text-sm sm:text-base break-words">
                         No file chosen
-                    </span>
+                    </div>
 
                 </div>
 
@@ -66,8 +60,6 @@
                     class="hidden"
                     onchange="updateFileName(this)">
             </div>
-
-            
             <button
                 class="w-full bg-green-500 py-3 rounded-xl font-semibold hover:bg-green-600 transition">
                 Upload Photo
@@ -78,7 +70,7 @@
         <div class="mt-6 text-center">
             <a
                 href="/profile"
-                class="text-zinc-400 hover:text-white transition">
+                class="text-zinc-400 hover:text-white transition text-sm sm:text-base">
                 ← Back to Dashboard
             </a>
         </div>
@@ -99,4 +91,3 @@ function updateFileName(input) {
 
 </body>
 </html>
-

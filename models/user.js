@@ -40,6 +40,11 @@ lastCompletedDate: {
     default: null
 },
 
+lastResetDate: {
+    type: Date,
+    default: null
+},
+
     tasks: [
         {
             type: mongoose.Schema.Types.ObjectId,

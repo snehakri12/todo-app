@@ -158,6 +158,21 @@ app.get("/profile", isLoggedIn, async (req, res) => {
             .findOne({ email: req.user.email })
             .populate("tasks");
 
+        let today = new Date();
+        today.setHours(0, 0, 0, 0);
+        if (
+            !user.lastResetDate ||
+            new Date(user.lastResetDate).setHours(0, 0, 0, 0) < today.getTime()
+        ) {
+            for (let task of user.tasks) {
+                task.completed = false;
+                await task.save();
+            }
+
+            user.lastResetDate = today;
+            await user.save();
+        }
+
         let totalTasks = user.tasks.length;
 
         let completedTasks = user.tasks.filter(
@@ -283,6 +298,21 @@ app.get("/task/complete/:id", isLoggedIn, async (req, res) => {
 app.get("/logout", (req, res) => {
     res.clearCookie("token");
     res.redirect("/");
+});
+
+app.get("/task/delete/:id", isLoggedIn, async (req, res) => {
+
+    let user = await userModel.findById(req.user.userid);
+
+    user.tasks = user.tasks.filter(
+        task => task.toString() !== req.params.id
+    );
+
+    await user.save();
+
+    await taskModel.findByIdAndDelete(req.params.id);
+
+    res.redirect("/profile");
 });
 
 app.listen(process.env.PORT || 3000, () => {
